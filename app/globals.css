@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #050505;
+  --foreground: #ffffff;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Utility Classes */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Aurora Ring Gradient */
+.aurora-ring-gradient {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    #1a0800 60deg,
+    #ff5500 120deg,
+    #ffffff 180deg,
+    #ff5500 240deg,
+    #1a0800 300deg,
+    transparent 360deg
+  );
+  filter: blur(30px);
+}
+
+/* Feature Card Gradients */
+.feature-card-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 85, 0, 0.05) 0%,
+    rgba(255, 85, 0, 0.02) 50%,
+    transparent 100%
+  );
+}
+
+/* Logo Grayscale Effect */
+.logo-grayscale {
+  filter: grayscale(100%) brightness(0.8);
+  transition: filter 0.3s ease;
+}
+
+.logo-grayscale:hover {
+  filter: grayscale(0%) brightness(1);
+}
+
+/* Ecosystem Circle Effect */
+.eco-circle {
+  transition: all 0.3s ease;
+}
+
+.eco-circle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 85, 0, 0.3);
+}
+
+/* Dot Pattern Background */
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Tech Grid Background */
+.tech-grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Plus Separator */
+.plus-separator {
+  position: relative;
+}
+
+.plus-separator::before {
+  content: '+';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 85, 0, 0.5);
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .plus-separator::before {
+    display: none;
+  }
+}
+
+/* Cyber Effects */
+.cyber-border {
+  position: relative;
+  border: 1px solid rgba(255, 85, 0, 0.3);
+}
+
+.cyber-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff5500, transparent, #ff5500);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cyber-border:hover::before {
+  opacity: 1;
+}
+
+/* Scroll Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Button Animations */
+.rotate-icon-on-hover {
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.group:hover .rotate-icon-on-hover {
+  transform: rotate(180deg);
+}
+
+/* Sliding Text Effect */
+.slide-text-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-text {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.group:hover .slide-text-up {
+  transform: translateY(-100%);
+}
+
+.slide-text-down {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transition: transform 0.3s ease;
+}
+
+.group:hover .slide-text-down {
+  transform: translateY(-100%);
+}
+
+/* Selection */
+::selection {
+  background-color: #ff5500;
+  color: #000000;
+}
+
+::-moz-selection {
+  background-color: #ff5500;
+  color: #000000;
+}
+
+/* Smooth Scrolling */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
