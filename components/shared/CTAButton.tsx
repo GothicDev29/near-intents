@@ -17,31 +17,33 @@ export function CTAButton({
   variant = 'ghost',
   onClick
 }: CTAButtonProps) {
-  const baseClasses = small
-    ? 'px-4 py-2 text-sm'
-    : 'px-6 py-3 text-base';
+  const paddingClass = small ? 'px-5 py-2 text-xs' : 'px-8 py-4 text-sm';
+  const iconSize = small ? 12 : 14;
 
-  const variantClasses = variant === 'solid'
-    ? 'bg-orange-600 text-white hover:bg-orange-700'
-    : 'border border-white/20 hover:border-orange-500 hover:bg-orange-500/10';
+  let baseStyles = `font-bold tracking-[0.2em] uppercase transition-all duration-300 flex items-center gap-3 group overflow-hidden rounded-[4px] ${className} ${paddingClass}`;
+
+  if (variant === 'solid') {
+    baseStyles += ` bg-orange-600 border border-orange-600 text-black hover:bg-orange-500 hover:border-orange-500`;
+  } else {
+    baseStyles += ` bg-black border border-orange-600 text-orange-500 hover:bg-orange-600 hover:text-white`;
+  }
 
   return (
-    <button
-      onClick={onClick}
-      className={`
-        group inline-flex items-center gap-2 rounded-full
-        transition-all duration-300 font-medium
-        ${baseClasses} ${variantClasses} ${className}
-      `}
-    >
+    <button onClick={onClick} className={baseStyles}>
       <Plus
-        size={small ? 16 : 20}
-        className="rotate-icon-on-hover"
+        size={iconSize}
+        className={`transition-transform duration-500 ease-out group-hover:rotate-180 ${
+          variant === 'solid' ? 'text-black' : ''
+        }`}
       />
-      <span className="relative overflow-hidden">
-        <span className="slide-text slide-text-up inline-block">{text}</span>
-        <span className="slide-text-down inline-block">{text}</span>
-      </span>
+      <div className="relative h-[1.2em] overflow-hidden">
+        <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full">
+          {text}
+        </span>
+        <span className="absolute top-0 left-0 block transition-transform duration-300 ease-out translate-y-full group-hover:translate-y-0">
+          {text}
+        </span>
+      </div>
     </button>
   );
 }

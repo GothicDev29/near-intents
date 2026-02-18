@@ -1,113 +1,53 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 export function AuroraRing() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+  const auroraRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
     const handleMouseMove = (e: MouseEvent) => {
-      const rect = container.getBoundingClientRect();
+      if (!auroraRef.current) return;
+
+      const rect = auroraRef.current.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
 
-      const mouseX = e.clientX;
-      const mouseY = e.clientY;
+      const dist = Math.hypot(e.clientX - centerX, e.clientY - centerY);
+      const maxDist = window.innerWidth;
+      const intensity = Math.max(0, 1 - dist / maxDist);
+      const opacity = 0.8 + (intensity * 0.2);
+      const scale = 1 + (intensity * 0.05);
+      const moveX = (e.clientX - centerX) * 0.03;
+      const moveY = (e.clientY - centerY) * 0.03;
 
-      const deltaX = mouseX - centerX;
-      const deltaY = mouseY - centerY;
-      const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+      auroraRef.current.style.transform = `translate(${moveX}px, ${moveY}px) scale(${scale})`;
+      auroraRef.current.style.opacity = opacity.toString();
 
-      const maxDistance = 400;
-      const intensity = Math.max(0, 1 - distance / maxDistance);
-
-      setMousePos({ x: deltaX, y: deltaY });
-      setIsHovering(intensity > 0);
-    };
-
-    const handleMouseLeave = () => {
-      setIsHovering(false);
+      const rings = auroraRef.current.querySelectorAll('.aurora-ring-layer');
+      rings.forEach((ring) => {
+        (ring as HTMLElement).style.filter = `blur(${20 + Array.from(rings).indexOf(ring) * 5}px) brightness(${1 + intensity * 0.5}) saturate(${1 + intensity})`;
+      });
     };
 
     window.addEventListener('mousemove', handleMouseMove);
-    container.addEventListener('mouseleave', handleMouseLeave);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      container.removeEventListener('mouseleave', handleMouseLeave);
-    };
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
-
-  const calculateTransform = (index: number) => {
-    if (!isHovering) return 'translate(-50%, -50%) scale(1)';
-
-    const scale = 1 + (index * 0.05);
-    const moveX = mousePos.x * (0.15 + index * 0.05);
-    const moveY = mousePos.y * (0.15 + index * 0.05);
-
-    return `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px)) scale(${scale})`;
-  };
-
-  const calculateOpacity = (baseOpacity: number) => {
-    return isHovering ? Math.min(1, baseOpacity * 1.5) : baseOpacity;
-  };
 
   return (
     <div
-      ref={containerRef}
-      className="absolute inset-0 overflow-hidden pointer-events-none"
-      style={{ zIndex: 0 }}
+      ref={auroraRef}
+      className="absolute -top-[20%] -right-[15%] w-[700px] h-[700px] md:w-[900px] md:h-[900px] pointer-events-none transition-transform duration-100 ease-out z-0"
+      style={{ opacity: 0.8 }}
     >
-      {/* Aurora Ring Layers */}
+      <div className="absolute inset-0 rounded-full aurora-ring-gradient aurora-ring-layer opacity-60 animate-aurora-spin" />
       <div
-        className="absolute top-1/2 left-1/2 w-[600px] h-[600px] rounded-full aurora-ring-gradient animate-aurora-spin"
-        style={{
-          transform: calculateTransform(0),
-          opacity: calculateOpacity(0.2),
-          transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
-        }}
+        className="absolute inset-8 rounded-full aurora-ring-gradient aurora-ring-layer opacity-100 animate-aurora-spin-reverse"
+        style={{ mixBlendMode: 'screen' }}
       />
-      <div
-        className="absolute top-1/2 left-1/2 w-[500px] h-[500px] rounded-full aurora-ring-gradient animate-aurora-spin-reverse"
-        style={{
-          transform: calculateTransform(1),
-          opacity: calculateOpacity(0.15),
-          transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
-        }}
-      />
-      <div
-        className="absolute top-1/2 left-1/2 w-[400px] h-[400px] rounded-full aurora-ring-gradient animate-aurora-spin"
-        style={{
-          transform: calculateTransform(2),
-          opacity: calculateOpacity(0.1),
-          transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
-        }}
-      />
-      <div
-        className="absolute top-1/2 left-1/2 w-[700px] h-[700px] rounded-full"
-        style={{
-          background: 'radial-gradient(circle, rgba(255, 85, 0, 0.1) 0%, transparent 70%)',
-          transform: calculateTransform(3),
-          opacity: calculateOpacity(0.3),
-          filter: 'blur(60px)',
-          transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
-        }}
-      />
-      <div
-        className="absolute top-1/2 left-1/2 w-[800px] h-[800px] rounded-full"
-        style={{
-          background: 'radial-gradient(circle, rgba(255, 85, 0, 0.05) 0%, transparent 70%)',
-          transform: calculateTransform(4),
-          opacity: calculateOpacity(0.2),
-          filter: 'blur(80px)',
-          transition: 'transform 0.3s ease-out, opacity 0.3s ease-out',
-        }}
-      />
+      <div className="absolute inset-20 rounded-full bg-gradient-to-tr from-black via-orange-900/40 to-black blur-[60px] animate-pulse" />
+      <div className="absolute inset-28 rounded-full bg-[#050505] blur-2xl z-10" />
+      <div className="absolute -inset-20 rounded-full bg-orange-900/20 blur-[120px] z-[-1]" />
     </div>
   );
 }
