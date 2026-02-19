@@ -6,7 +6,7 @@ export function FeatureCards() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Card 1: SWAP */}
         <RevealOnScroll delay={0}>
-          <div className="bg-[#1E1E1E] border border-white/10 p-8 rounded-[16px] h-full relative group hover:border-[#FDEB8F]/30 transition-all shadow-lg min-h-[320px] flex flex-col overflow-hidden">
+          <div className="border border-white/10 p-8 rounded-[16px] h-full relative group hover:border-[#FDEB8F]/30 transition-all shadow-lg min-h-[320px] flex flex-col overflow-hidden" style={{ background: 'linear-gradient(225deg, #A7A7A7 0%, #272727 100%)' }}>
             <span className="text-[10px] font-mono text-[#FDEB8F] mb-8 block">{`{ 01 SWAP`}</span>
             <div className="absolute top-8 right-8">
               <div className="w-12 h-12 rounded-full border border-[#FDEB8F]/50 flex items-center justify-center relative animate-cyber-spin">
@@ -44,7 +44,7 @@ export function FeatureCards() {
 
         {/* Card 2: EARN */}
         <RevealOnScroll delay={0}>
-          <div className="bg-[#1E1E1E] border border-white/10 p-8 rounded-[16px] h-full relative group hover:border-[#FDEB8F]/30 transition-all shadow-lg min-h-[320px] flex flex-col overflow-hidden">
+          <div className="border border-white/10 p-8 rounded-[16px] h-full relative group hover:border-[#FDEB8F]/30 transition-all shadow-lg min-h-[320px] flex flex-col overflow-hidden" style={{ background: 'linear-gradient(225deg, #A7A7A7 0%, #272727 100%)' }}>
             <span className="text-[10px] font-mono text-[#FDEB8F] mb-8 block">{`{ 02 EARN`}</span>
             <div className="absolute top-12 right-12">
               <div className="w-2 h-2 border border-[#FDEB8F] rounded-full animate-blink"></div>
@@ -69,7 +69,7 @@ export function FeatureCards() {
 
         {/* Card 3: CONFIDENTIAL */}
         <RevealOnScroll delay={0}>
-          <div className="bg-[#1E1E1E] border border-white/10 p-8 rounded-[16px] h-full relative group hover:border-[#FDEB8F]/30 transition-all shadow-lg min-h-[320px] flex flex-col overflow-hidden">
+          <div className="border border-white/10 p-8 rounded-[16px] h-full relative group hover:border-[#FDEB8F]/30 transition-all shadow-lg min-h-[320px] flex flex-col overflow-hidden" style={{ background: 'linear-gradient(225deg, #A7A7A7 0%, #272727 100%)' }}>
             <span className="text-[10px] font-mono text-[#FDEB8F] mb-8 block">{`{ 03 CONFIDENTIAL`}</span>
             <div className="absolute top-10 right-10 flex gap-1 text-[#FDEB8F] font-mono text-xs">
               {[...Array(5)].map((_, i) => (
