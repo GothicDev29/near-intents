@@ -155,7 +155,7 @@ export function Hero() {
       {/* Marquee */}
       <div className="relative z-10 w-full pb-8">
         <div className="w-full overflow-hidden py-8 border-y border-white/5">
-          <div className="animate-marquee flex items-center gap-16 px-8">
+          <div className="animate-marquee [animation-duration:8s] md:[animation-duration:30s] flex items-center gap-16 px-8">
             {doubledLogos.map((logo, i) => (
               <div key={i} className="shrink-0 rounded-full border border-[#333333] p-3">
                 <Image

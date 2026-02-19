@@ -28,6 +28,7 @@ const config: Config = {
       },
       animation: {
         'marquee': 'marquee 30s linear infinite',
+        'marquee-fast': 'marquee 12s linear infinite',
         'aurora-spin': 'aurora-spin 20s linear infinite',
         'aurora-spin-reverse': 'aurora-spin 15s linear infinite reverse',
         'cyber-spin': 'cyber-spin 12s linear infinite',

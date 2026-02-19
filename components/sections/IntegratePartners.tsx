@@ -98,9 +98,9 @@ export function IntegratePartners() {
       {/* Slider */}
       <div className="relative">
         {/* Fade izquierda */}
-        <div className="absolute left-0 top-0 h-full w-32 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #242424, transparent)' }} />
+        <div className="hidden md:block absolute left-0 top-0 h-full w-32 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #242424, transparent)' }} />
         {/* Fade derecha */}
-        <div className="absolute right-0 top-0 h-full w-32 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #242424, transparent)' }} />
+        <div className="hidden md:block absolute right-0 top-0 h-full w-32 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #242424, transparent)' }} />
       <div ref={clipRef} className="overflow-hidden cursor-grab select-none">
         <div ref={trackRef} className="flex gap-16 w-max">
         {items.map((partner, i) => (

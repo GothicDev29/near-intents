@@ -16,16 +16,16 @@ function LargeLogo({ name }: { name: string }) {
   return (
     <div className="relative flex flex-col items-center">
       <span className="absolute -top-5 right-2 text-brand-orange text-xs font-mono select-none">+</span>
-      <div className="group w-[120px] h-[120px] rounded-full bg-[#1a1a1a] border border-white/10 flex items-center justify-center">
+      <div className="group w-16 h-16 md:w-[120px] md:h-[120px] rounded-full bg-[#1a1a1a] border border-white/10 flex items-center justify-center">
         <Image
           src={LOGO}
           alt={name}
           width={68}
           height={68}
-          className="object-contain grayscale opacity-[0.85] group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+          className="object-contain w-8 h-8 md:w-[68px] md:h-[68px] grayscale opacity-[0.85] group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
         />
       </div>
-      <span className="mt-3 text-white font-bold text-sm tracking-wide [font-family:var(--font-grotesk)]">{name}</span>
+      <span className="mt-2 text-white font-bold text-[10px] md:text-sm tracking-wide [font-family:var(--font-grotesk)]">{name}</span>
     </div>
   );
 }
@@ -49,7 +49,7 @@ function SmallLogo({ name }: { name: string }) {
 
 export function Ecosystem() {
   return (
-    <section id="ecosystem" className="relative py-32 px-8 md:px-20 bg-[#000]">
+    <section id="ecosystem" className="relative py-16 md:py-32 px-8 md:px-20 bg-[#000]">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -63,7 +63,7 @@ export function Ecosystem() {
 
         {/* Row 1 — 6 large logos */}
         <RevealOnScroll delay={0.1}>
-          <div className="grid grid-cols-6 gap-6 mb-16 pt-6">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-6 mb-10 md:mb-16 pt-6">
             {FEATURED.map((name, i) => (
               <LargeLogo key={i} name={name} />
             ))}
@@ -72,7 +72,7 @@ export function Ecosystem() {
 
         {/* Row 2 — 11 small logos */}
         <RevealOnScroll delay={0.2}>
-          <div className="flex justify-between mb-10">
+          <div className="grid grid-cols-4 md:[grid-template-columns:repeat(11,minmax(0,1fr))] gap-4 mb-8 md:mb-10">
             {ROW.map((name, i) => (
               <SmallLogo key={i} name={name} />
             ))}
@@ -81,7 +81,7 @@ export function Ecosystem() {
 
         {/* Row 3 — 11 small logos */}
         <RevealOnScroll delay={0.3}>
-          <div className="flex justify-between">
+          <div className="grid grid-cols-4 md:[grid-template-columns:repeat(11,minmax(0,1fr))] gap-4">
             {ROW.map((name, i) => (
               <SmallLogo key={i} name={name} />
             ))}
