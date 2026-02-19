@@ -1,37 +1,117 @@
+'use client';
+
+import { useRef, useEffect } from 'react';
+import Image from 'next/image';
 import { RevealOnScroll } from '@/components/shared/RevealOnScroll';
 import { CTAButton } from '@/components/shared/CTAButton';
-import { Github, Twitter, Send, Youtube, ArrowRight } from 'lucide-react';
+import { Github, Twitter, Send, Youtube } from 'lucide-react';
 
 export function FooterCTA() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const buttonsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let target = 0;
+    let current = 0;
+    let rafId: number;
+    let buttonHovered = false;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (buttonHovered) return;
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      // focal point: bottom-left corner
+      const dist = Math.hypot(e.clientX - rect.left, e.clientY - rect.bottom);
+      const maxDist = Math.hypot(rect.width, rect.height) * 0.65;
+      const raw = Math.max(0, 1 - dist / maxDist);
+      target = raw * raw * (3 - 2 * raw);
+    };
+
+    const handleButtonEnter = () => { buttonHovered = true; target = 1; };
+    const handleButtonLeave = () => { buttonHovered = false; };
+
+    const tick = () => {
+      current += (target - current) * 0.06;
+
+      if (imageWrapperRef.current) {
+        if (current > 0.001) {
+          const blur = current * 12;
+          const imgOpacity = 0.6 + current * 0.4;
+          const brightness = 0.85 + current * 0.45;
+          imageWrapperRef.current.style.opacity = imgOpacity.toFixed(3);
+          imageWrapperRef.current.style.filter = `brightness(${brightness.toFixed(3)}) blur(${blur.toFixed(2)}px)`;
+        } else {
+          imageWrapperRef.current.style.opacity = '0.6';
+          imageWrapperRef.current.style.filter = 'brightness(0.85)';
+        }
+      }
+
+      rafId = requestAnimationFrame(tick);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    rafId = requestAnimationFrame(tick);
+
+    const buttons = buttonsRef.current;
+    buttons?.addEventListener('mouseenter', handleButtonEnter);
+    buttons?.addEventListener('mouseleave', handleButtonLeave);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(rafId);
+      buttons?.removeEventListener('mouseenter', handleButtonEnter);
+      buttons?.removeEventListener('mouseleave', handleButtonLeave);
+    };
+  }, []);
+
   return (
-    <footer className="py-40 px-8 text-center bg-[#000] relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-orange-900/50 to-transparent"></div>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-brand-orange-600/10 blur-[150px] rounded-full" />
+    <footer ref={sectionRef} className="py-32 px-8 md:px-20 bg-[#000] relative overflow-hidden">
 
-      <RevealOnScroll>
-        <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight text-white">
-            Integrate and swap with Intents today
-          </h2>
+      {/* Background image */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div ref={imageWrapperRef} className="relative w-full h-full">
+          <Image
+            src="/images/footer-bg.jpg"
+            alt=""
+            fill
+            className="object-cover object-left-top"
+          />
+        </div>
+      </div>
 
-          {/* Orange horizontal line */}
-          <div className="h-1 w-full max-w-2xl bg-brand-orange-600 mb-12"></div>
+      {/* Content */}
+      <div className="max-w-7xl mx-auto relative z-10">
+        <RevealOnScroll>
 
-          <div className="flex justify-center mb-32">
-            <CTAButton text="Talk with the team" />
+          {/* Title + line + button */}
+          <div className="flex justify-center">
+            <div className="inline-block w-fit">
+              <h2 className="text-[48px] font-bold text-white leading-[1.05]">
+                Integrate and swap with Intents today
+              </h2>
+
+              <div
+                className="w-full h-px mt-6"
+                style={{ background: 'linear-gradient(to right, #FB4D01, transparent)' }}
+              />
+
+              <div ref={buttonsRef} className="flex justify-end mt-6">
+                <CTAButton text="Talk with the team" />
+              </div>
+            </div>
           </div>
 
-          {/* Iconos Sociales Minimalistas */}
-          <div className="flex justify-center gap-8 items-center text-brand-orange">
+          {/* Social icons */}
+          <div className="flex justify-center gap-8 items-center text-brand-orange mt-32">
             <Github size={20} className="hover:text-white transition-colors cursor-pointer" />
             <Twitter size={20} className="hover:text-white transition-colors cursor-pointer" />
             <Send size={20} className="hover:text-white transition-colors cursor-pointer" />
             <Youtube size={20} className="hover:text-white transition-colors cursor-pointer" />
           </div>
 
-          <div className="mt-8 text-xs text-zinc-600">© 2024 NEAR Foundation.</div>
-        </div>
-      </RevealOnScroll>
+        </RevealOnScroll>
+      </div>
     </footer>
   );
 }
