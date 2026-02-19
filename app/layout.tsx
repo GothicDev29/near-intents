@@ -1,14 +1,42 @@
 import type { Metadata } from 'next';
-import { Space_Grotesk } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import { LenisProvider } from '@/lib/lenis-provider';
 
-// Using Space Grotesk as alternative to FK Grotesk (similar geometric sans-serif)
-// To use FK Grotesk instead, replace with localFont and add font files
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  display: 'swap',
+// FK Grotesk - Loaded from local files
+const fkGrotesk = localFont({
+  src: [
+    {
+      path: '../public/fonts/FK Grotesk 2.100/FKGrotesk-Thin.otf',
+      weight: '100',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/FK Grotesk 2.100/FKGrotesk-Light.otf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/FK Grotesk 2.100/FKGrotesk-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/FK Grotesk 2.100/FKGrotesk-Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/FK Grotesk 2.100/FKGrotesk-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/FK Grotesk 2.100/FKGrotesk-Black.otf',
+      weight: '900',
+      style: 'normal',
+    },
+  ],
   variable: '--font-grotesk',
 });
 
@@ -35,7 +63,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${spaceGrotesk.className} antialiased`} suppressHydrationWarning>
+      <body className={`${fkGrotesk.className} antialiased`} suppressHydrationWarning>
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>
