@@ -28,31 +28,29 @@ export function NewsSection() {
               'Expanding NEAR Intents: Passkeys & OTC Trading Now Live',
               'Introducing NEAR Intents: A New Type of Transaction Between AI and the Real World',
             ].map((title, i) => (
-              <RevealOnScroll key={i} delay={i * 100}>
-                <a href="#" className="group relative h-[380px] w-full cursor-pointer perspective-1000">
-                  {/* Black Background Layer (Backing) */}
-                  <div className="absolute inset-0 bg-black translate-x-4 translate-y-4 rounded-[16px] overflow-hidden transition-transform duration-500 ease-out group-hover:translate-x-6 group-hover:translate-y-6">
-                    {/* Tech Grid Pattern */}
-                    <div className="absolute inset-0 opacity-40 tech-grid-bg">
-                      <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-white rounded-full"></div>
-                      <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-white rounded-full border border-gray-500"></div>
-                      <div className="absolute top-full left-0 w-full h-full bg-gradient-to-t from-gray-900 to-transparent"></div>
-                    </div>
+              <div key={i} className="group relative h-[380px] w-full cursor-pointer">
+                {/* Black Background Layer (Backing) */}
+                <div className="absolute inset-0 bg-black translate-x-4 translate-y-4 rounded-[16px] overflow-hidden transition-transform duration-500 ease-out group-hover:translate-x-6 group-hover:translate-y-6">
+                  {/* Tech Grid Pattern */}
+                  <div className="absolute inset-0 opacity-40 tech-grid-bg">
+                    <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-white rounded-full"></div>
+                    <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-white rounded-full border border-gray-500"></div>
+                    <div className="absolute top-full left-0 w-full h-full bg-gradient-to-t from-gray-900 to-transparent"></div>
                   </div>
+                </div>
 
-                  {/* White Foreground Card */}
-                  <div className="absolute inset-0 bg-white p-8 flex flex-col justify-between rounded-[16px] shadow-xl transition-all duration-500 ease-out group-hover:-translate-y-2 group-hover:-translate-x-2 border border-white">
-                    <div>
-                      <div className="flex gap-1.5 mb-6">
-                        {[...Array(5)].map((_, j) => (
-                          <Plus key={j} size={10} className="text-orange-500 stroke-[4px]" />
-                        ))}
-                      </div>
-                      <h3 className="text-black text-2xl font-bold leading-tight tracking-tight">{title}</h3>
+                {/* White Foreground Card */}
+                <div className="absolute inset-0 bg-white p-8 flex flex-col justify-between rounded-[16px] shadow-xl transition-all duration-500 ease-out group-hover:-translate-y-2 group-hover:-translate-x-2 border border-white">
+                  <div>
+                    <div className="flex gap-1.5 mb-6">
+                      {[...Array(5)].map((_, j) => (
+                        <Plus key={j} size={10} className="text-orange-500 stroke-[4px]" />
+                      ))}
                     </div>
+                    <h3 className="text-black text-2xl font-bold leading-tight tracking-tight">{title}</h3>
                   </div>
-                </a>
-              </RevealOnScroll>
+                </div>
+              </div>
             ))}
           </div>
         </div>
