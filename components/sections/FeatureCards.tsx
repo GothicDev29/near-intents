@@ -12,10 +12,10 @@ export function FeatureCards() {
         <RevealOnScroll delay={0}>
           <div className="border border-white/10 p-8 rounded-[16px] h-full relative group hover:border-[#FDEB8F]/30 transition-all shadow-lg min-h-[480px] flex flex-col overflow-hidden" style={{ background: 'linear-gradient(225deg, #A7A7A7 0%, #272727 100%)' }}>
             {/* Label */}
-            <span className="text-[16px] font-mono text-[#FDEB8F] mb-6 block">{`{ 01 SWAP`}</span>
+            <span className="text-[16px] font-mono text-white mb-6 block">{`{ 01 SWAP`}</span>
 
             {/* Circle con línea */}
-            <div className="relative flex justify-center mb-6">
+            <div className="relative flex items-center justify-center h-[120px]">
               <div className="relative">
                 {/* Círculo exterior — estático */}
                 <div className="w-[90px] h-[90px] rounded-full border-2 border-[#FDEB8F]/30 relative">
@@ -42,7 +42,7 @@ export function FeatureCards() {
 
             {/* Título + decoración */}
             <div className="flex items-start justify-between mb-4">
-              <h3 className="text-[40px] font-bold text-[#FFFFFF] leading-tight">
+              <h3 className="text-[32px] font-bold text-[#FFFFFF] leading-[1.1]">
                 Cross-chain,<br />
                 simplified
               </h3>
@@ -55,7 +55,7 @@ export function FeatureCards() {
             </div>
 
             {/* Descripción con + prefijo */}
-            <div className="flex gap-3 mb-8">
+            <div className="flex gap-3">
               <span className="text-[#FDEB8F] text-[18px] mt-px shrink-0 [font-family:var(--font-grotesk-mono)]">+</span>
               <p className="text-[16px] text-[#FFFFFF] leading-relaxed uppercase tracking-wider [font-family:var(--font-grotesk-mono)]">
                 NO MANUAL GAS JUGGLING OR BRIDGE MANAGEMENT REQUIRED. EXCHANGE-GRADE EXECUTION, WITHOUT GIVING UP CONTROL OF YOUR WALLET
@@ -70,17 +70,19 @@ export function FeatureCards() {
         <RevealOnScroll delay={0}>
           <div className="border border-white/10 p-8 rounded-[16px] h-full relative group hover:border-[#FDEB8F]/30 transition-all shadow-lg min-h-[480px] flex flex-col overflow-hidden" style={{ background: 'linear-gradient(225deg, #A7A7A7 0%, #272727 100%)' }}>
             {/* Label */}
-            <span className="text-[16px] font-mono text-[#FDEB8F] mb-6 block">{`{ 02 EARN`}</span>
+            <span className="text-[16px] font-mono text-white mb-6 block">{`{ 02 EARN`}</span>
 
             {/* Línea diagonal — top right */}
             <div className="absolute top-10 right-10 w-px h-14 bg-white/25 rotate-[-45deg]" />
 
             {/* Dos círculos palpitantes */}
-            <PulsingCircles />
+            <div className="flex items-center justify-center h-[120px]">
+              <PulsingCircles />
+            </div>
 
             {/* Contenido */}
-            <div className="mt-auto">
-              <h3 className="text-[40px] font-bold mb-4 text-[#FFFFFF] leading-tight">
+            <div>
+              <h3 className="text-[32px] font-bold mb-4 text-[#FFFFFF] leading-[1.1]">
                 Idle assets?<br />
                 Put them to work.
               </h3>
@@ -101,16 +103,19 @@ export function FeatureCards() {
         <RevealOnScroll delay={0}>
           <div className="border border-white/10 p-8 rounded-[16px] h-full relative group hover:border-[#FDEB8F]/30 transition-all shadow-lg min-h-[480px] flex flex-col overflow-hidden" style={{ background: 'linear-gradient(225deg, #A7A7A7 0%, #272727 100%)' }}>
             {/* Label */}
-            <span className="text-[16px] font-mono text-[#FDEB8F] mb-6 block">{`{ 03 CONFIDENTIAL`}</span>
+            <span className="text-[16px] font-mono text-white mb-6 block">{`{ 03 CONFIDENTIAL`}</span>
 
             {/* Glitch + pattern top right */}
             <div className="absolute top-14 right-8 left-8">
               <GlitchPlus count={10} />
             </div>
 
+            {/* Spacer decorativo */}
+            <div className="h-[120px]" />
+
             {/* Contenido */}
-            <div className="mt-auto">
-              <h3 className="text-[40px] font-bold mb-4 text-[#FFFFFF] leading-tight">
+            <div>
+              <h3 className="text-[32px] font-bold mb-4 text-[#FFFFFF] leading-[1.1]">
                 Your transactions.<br />
                 Your business.
               </h3>

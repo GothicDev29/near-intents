@@ -35,7 +35,7 @@ export function PulsingCircles() {
   }, []);
 
   return (
-    <div className="flex justify-center my-8">
+    <div className="flex justify-center">
       <div className="relative flex items-center justify-center w-[90px] h-[90px]">
         {/* Círculo exterior — lento, max 90px */}
         <div ref={ref1} className="absolute w-[75px] h-[75px] rounded-full border border-[#FDEB8F]/40" />
