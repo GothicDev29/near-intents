@@ -18,7 +18,7 @@ const GRID_CHAINS = [
   { name: 'Optimism', icon: Disc, color: 'text-red-400' },
   { name: 'Base', icon: Circle, color: 'text-blue-600' },
   { name: 'Polygon', icon: Aperture, color: 'text-purple-500' },
-  { name: 'Bitcoin', icon: Circle, color: 'text-orange-500' },
+  { name: 'Bitcoin', icon: Circle, color: 'text-brand-orange' },
 ];
 
 export function Ecosystem() {
@@ -28,12 +28,12 @@ export function Ecosystem() {
     .map((_, i) => GRID_CHAINS[i % GRID_CHAINS.length]);
 
   return (
-    <section id="ecosystem" className="relative py-32 px-4 sm:px-6 lg:px-8 bg-[#050505]">
+    <section id="ecosystem" className="relative py-32 px-4 sm:px-6 lg:px-8 bg-[#1E1E1E]">
       <div className="max-w-7xl mx-auto">
         <RevealOnScroll>
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-              Intents <span className="text-orange-600">Ecosystem</span>
+              Intents <span className="text-brand-orange-600">Ecosystem</span>
             </h2>
             <p className="text-lg text-white/70 max-w-3xl mx-auto">
               Supporting 35+ blockchains and counting

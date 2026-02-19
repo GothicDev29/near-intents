@@ -11,6 +11,20 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        'brand-dark': '#1E1E1E',
+        'brand-orange': {
+          DEFAULT: '#FB4D01',
+          50: '#FEF2EE',
+          100: '#FDE5DD',
+          200: '#FBCBBB',
+          300: '#F9B199',
+          400: '#F79777',
+          500: '#FB4D01',
+          600: '#E04401',
+          700: '#C63B01',
+          800: '#AB3301',
+          900: '#912A01',
+        },
       },
       animation: {
         'marquee': 'marquee 30s linear infinite',

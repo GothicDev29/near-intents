@@ -4,12 +4,12 @@ import { User, FileText, Activity, CheckCircle, Network, Box, ArrowRight } from 
 
 export function HowItWorks() {
   return (
-    <section className="py-32 px-8 md:px-20 bg-[#050505] relative">
+    <section className="py-32 px-8 md:px-20 bg-[#1E1E1E] relative">
       <div className="max-w-7xl mx-auto">
         <RevealOnScroll>
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-6 tracking-tight text-white">How it works</h2>
-            <div className="w-full h-px bg-gradient-to-r from-orange-500 to-transparent my-6"></div>
+            <div className="w-full h-px bg-gradient-to-r from-brand-orange/500 to-transparent my-6"></div>
             <p className="text-zinc-400 leading-relaxed mb-8 text-sm md:text-base max-w-2xl">
               NEAR Intents uses a novel transaction architecture to abstract away cross-chain complexity and maximize performance, security, and efficiency for DeFi apps, AI agents and end users.
             </p>
@@ -44,16 +44,16 @@ export function HowItWorks() {
                   </div>
                   <ArrowRight size={20} className="text-zinc-600" />
                   <div className="flex flex-col items-center gap-2">
-                    <div className="w-12 h-12 rounded-[16px] border border-orange-500/50 bg-orange-900/10 flex items-center justify-center text-orange-500">
+                    <div className="w-12 h-12 rounded-[16px] border border-brand-orange/500/50 bg-brand-orange/900/10 flex items-center justify-center text-brand-orange">
                       <Activity size={20} />
                     </div>
-                    <span className="text-[9px] text-orange-500 font-bold uppercase">Market Maker</span>
+                    <span className="text-[9px] text-brand-orange font-bold uppercase">Market Maker</span>
                   </div>
                 </div>
               </div>
 
               {/* Conector horizontal/vertical */}
-              <div className="hidden md:flex h-px w-16 bg-gradient-to-r from-zinc-700 to-orange-600"></div>
+              <div className="hidden md:flex h-px w-16 bg-gradient-to-r from-zinc-700 to-brand-orange-600"></div>
               <ArrowRight className="md:hidden text-zinc-600 rotate-90" />
 
               {/* ON CHAIN - flex-[2] */}
@@ -63,33 +63,33 @@ export function HowItWorks() {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative pt-4">
                   {/* Approved Quote */}
                   <div className="flex flex-col items-center gap-2">
-                    <div className="w-12 h-12 rounded-full border border-orange-500 text-orange-500 flex items-center justify-center bg-orange-500/10">
+                    <div className="w-12 h-12 rounded-full border border-brand-orange/500 text-brand-orange flex items-center justify-center bg-brand-orange/500/10">
                       <CheckCircle size={20} />
                     </div>
-                    <span className="text-[9px] text-orange-500 font-bold uppercase text-center">Approved<br/>Quote</span>
+                    <span className="text-[9px] text-brand-orange font-bold uppercase text-center">Approved<br/>Quote</span>
                   </div>
 
-                  <div className="h-8 w-px md:w-12 md:h-px bg-orange-600/50"></div>
+                  <div className="h-8 w-px md:w-12 md:h-px bg-brand-orange/600/50"></div>
 
                   {/* Intents Smart Contract */}
                   <div className="flex flex-col items-center gap-2">
-                    <div className="w-14 h-14 rounded-[16px] border-2 border-orange-600 text-white bg-zinc-900 flex items-center justify-center shadow-[0_0_30px_rgba(234,88,12,0.2)]">
+                    <div className="w-14 h-14 rounded-[16px] border-2 border-brand-orange/600 text-white bg-zinc-900 flex items-center justify-center shadow-[0_0_30px_rgba(234,88,12,0.2)]">
                       <FileText size={24} />
                     </div>
                     <span className="text-[9px] text-white font-bold uppercase text-center">Intents<br/>Smart Contract</span>
                   </div>
 
-                  <div className="h-8 w-px md:w-12 md:h-px bg-orange-600/50"></div>
+                  <div className="h-8 w-px md:w-12 md:h-px bg-brand-orange/600/50"></div>
 
                   {/* Omnibridge */}
                   <div className="flex flex-col items-center gap-2">
-                    <div className="w-12 h-12 rounded-full border border-orange-500 text-orange-500 flex items-center justify-center bg-orange-500/10">
+                    <div className="w-12 h-12 rounded-full border border-brand-orange/500 text-brand-orange flex items-center justify-center bg-brand-orange/500/10">
                       <Network size={20} />
                     </div>
-                    <span className="text-[9px] text-orange-500 font-bold uppercase text-center">Omnibridge</span>
+                    <span className="text-[9px] text-brand-orange font-bold uppercase text-center">Omnibridge</span>
                   </div>
 
-                  <div className="h-8 w-px md:w-12 md:h-px bg-gradient-to-r from-orange-600/50 to-zinc-700"></div>
+                  <div className="h-8 w-px md:w-12 md:h-px bg-gradient-to-r from-brand-orange/600/50 to-zinc-700"></div>
 
                   {/* 4 Chains pequeñas */}
                   <div className="flex flex-col gap-2 p-3 border-l border-zinc-800 pl-6">

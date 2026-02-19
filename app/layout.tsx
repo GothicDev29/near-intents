@@ -1,9 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { LenisProvider } from '@/lib/lenis-provider';
 
-const inter = Inter({ subsets: ['latin'] });
+// Using Space Grotesk as alternative to FK Grotesk (similar geometric sans-serif)
+// To use FK Grotesk instead, replace with localFont and add font files
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-grotesk',
+});
 
 export const metadata: Metadata = {
   title: 'NEAR Intents - The Universal Liquidity Protocol',
@@ -28,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} antialiased`} suppressHydrationWarning>
+      <body className={`${spaceGrotesk.className} antialiased`} suppressHydrationWarning>
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>

@@ -66,12 +66,12 @@ export function IntegratePartners() {
   };
 
   return (
-    <section className="relative py-32 px-4 sm:px-6 lg:px-8 bg-[#050505]">
+    <section className="relative py-32 px-4 sm:px-6 lg:px-8 bg-[#1E1E1E]">
       <div className="max-w-7xl mx-auto">
         <RevealOnScroll>
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-              Integrate with <span className="text-orange-600">Partners</span>
+              Integrate with <span className="text-brand-orange-600">Partners</span>
             </h2>
             <p className="text-lg text-white/70 max-w-3xl mx-auto">
               Leading protocols and platforms building on NEAR Intents
@@ -94,7 +94,7 @@ export function IntegratePartners() {
             {PARTNERS.map((partner, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[320px] border border-white/10 rounded-2xl p-8 bg-black/30 backdrop-blur-sm hover:border-orange-600/50 transition-all duration-300 select-none"
+                className="flex-shrink-0 w-[320px] border border-white/10 rounded-2xl p-8 bg-black/30 backdrop-blur-sm hover:border-brand-orange/600/50 transition-all duration-300 select-none"
               >
                 <div className="w-20 h-20 mb-6 flex items-center justify-center bg-white rounded-xl">
                   <span className="text-3xl font-bold text-black">

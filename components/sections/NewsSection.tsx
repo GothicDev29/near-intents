@@ -3,7 +3,7 @@ import { ArrowRight, Plus } from 'lucide-react';
 
 export function NewsSection() {
   return (
-    <section className="py-32 px-8 md:px-20 bg-[#050505] relative border-t border-white/5">
+    <section className="py-32 px-8 md:px-20 bg-[#1E1E1E] relative border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         {/* Contenedor Gris con gradiente y bordes redondeados */}
         <div className="bg-gradient-to-b from-[#71717a] to-[#27272a] rounded-[16px] p-12 pb-16 relative">
@@ -44,7 +44,7 @@ export function NewsSection() {
                   <div>
                     <div className="flex gap-1.5 mb-6">
                       {[...Array(5)].map((_, j) => (
-                        <Plus key={j} size={10} className="text-orange-500 stroke-[4px]" />
+                        <Plus key={j} size={10} className="text-brand-orange stroke-[4px]" />
                       ))}
                     </div>
                     <h3 className="text-black text-2xl font-bold leading-tight tracking-tight">{title}</h3>

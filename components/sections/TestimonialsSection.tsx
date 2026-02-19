@@ -3,30 +3,30 @@ import { ArrowRight } from 'lucide-react';
 
 export function TestimonialsSection() {
   return (
-    <section className="py-32 px-8 md:px-20 bg-[#050505] relative border-t border-white/5">
+    <section className="py-32 px-8 md:px-20 bg-[#1E1E1E] relative border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <div className="mb-32 space-y-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <RevealOnScroll>
               <div>
-                <div className="flex gap-2 mb-4 text-orange-500/50">
+                <div className="flex gap-2 mb-4 text-brand-orange/50">
                   <span className="text-xs">/</span>
                   <span className="text-xs">/</span>
                   <span className="text-xs">/</span>
                   <span className="text-xs">/</span>
                 </div>
                 <p className="text-2xl md:text-3xl font-bold leading-tight">
-                  «Intents are the <span className="text-orange-500">future</span> of crypto.»
+                  «Intents are the <span className="text-brand-orange">future</span> of crypto.»
                 </p>
                 <div className="mt-4 flex items-center gap-2 text-[10px] text-zinc-500 uppercase tracking-widest">
-                  <span className="text-orange-500 font-bold">-</span> Charles Hoskinson, Cardano{' '}
+                  <span className="text-brand-orange font-bold">-</span> Charles Hoskinson, Cardano{' '}
                   <ArrowRight size={10} className="-rotate-45" />
                 </div>
               </div>
             </RevealOnScroll>
             <RevealOnScroll delay={0}>
               <div className="md:text-right">
-                <div className="flex gap-2 mb-4 justify-end text-orange-500/50">
+                <div className="flex gap-2 mb-4 justify-end text-brand-orange/50">
                   <span className="text-xs">+</span>
                   <span className="text-xs">+</span>
                   <span className="text-xs">+</span>
@@ -34,10 +34,10 @@ export function TestimonialsSection() {
                   <span className="text-xs">+</span>
                 </div>
                 <p className="text-2xl md:text-3xl font-bold leading-tight">
-                  «NEAR Intents is an <span className="text-orange-500">insanely good</span> product.»
+                  «NEAR Intents is an <span className="text-brand-orange">insanely good</span> product.»
                 </p>
                 <div className="mt-4 flex items-center justify-end gap-2 text-[10px] text-zinc-500 uppercase tracking-widest">
-                  <span className="text-orange-500 font-bold">-</span> Dan Smith, Blockworks Research{' '}
+                  <span className="text-brand-orange font-bold">-</span> Dan Smith, Blockworks Research{' '}
                   <ArrowRight size={10} className="-rotate-45" />
                 </div>
               </div>
@@ -47,10 +47,10 @@ export function TestimonialsSection() {
             <RevealOnScroll delay={0}>
               <p className="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
                 «This integration is what crypto is all about:{' '}
-                <span className="text-orange-500">empowering</span> users to exchange value directly, on their terms.»
+                <span className="text-brand-orange">empowering</span> users to exchange value directly, on their terms.»
               </p>
               <div className="mt-8 flex items-center justify-center gap-2 text-[10px] text-zinc-500 uppercase tracking-widest">
-                <span className="text-orange-500 font-bold">-</span> Christian Thompson, SUI Foundation Managing Director{' '}
+                <span className="text-brand-orange font-bold">-</span> Christian Thompson, SUI Foundation Managing Director{' '}
                 <ArrowRight size={10} className="-rotate-45" />
               </div>
             </RevealOnScroll>
@@ -58,15 +58,15 @@ export function TestimonialsSection() {
           <div className="flex justify-end">
             <div className="max-w-3xl text-right">
               <RevealOnScroll delay={0}>
-                <div className="flex gap-2 mb-4 justify-end text-orange-500/50 opacity-50 tracking-[0.5em] text-xs">
+                <div className="flex gap-2 mb-4 justify-end text-brand-orange/50 opacity-50 tracking-[0.5em] text-xs">
                   |||||||||||||||||
                 </div>
                 <p className="text-2xl md:text-3xl font-bold leading-tight text-zinc-300">
                   «With NEAR, we can bring the same functionality to chains like Bitcoin, offering users genuine
-                  self-custody of native assets <span className="text-orange-500">without compromise</span>.»
+                  self-custody of native assets <span className="text-brand-orange">without compromise</span>.»
                 </p>
                 <div className="mt-6 flex items-center justify-end gap-2 text-[10px] text-zinc-500 uppercase tracking-widest">
-                  <span className="text-orange-500 font-bold">-</span> Jed Watson, Infinex CTO{' '}
+                  <span className="text-brand-orange font-bold">-</span> Jed Watson, Infinex CTO{' '}
                   <ArrowRight size={10} className="-rotate-45" />
                 </div>
               </RevealOnScroll>
@@ -89,7 +89,7 @@ export function TestimonialsSection() {
               desc: 'Integrate once through a single API and access liquidity across every major chain, so your dApp can accelerate time to market, reduce operational overhead, and stay competitive with faster, cheaper, safer swaps across 125+ assets.',
             },
           ].map((card, i) => (
-            <div key={i} className="bg-[#ff5500] rounded-[16px] p-8 min-h-[300px] flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
+            <div key={i} className="bg-[#FB4D01] rounded-[16px] p-8 min-h-[300px] flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
               <div>
                 <h3 className="text-[#1a1a1a] font-light text-2xl mb-6 tracking-wide flex flex-col gap-1 uppercase font-mono">
                   <span className="text-sm font-bold">+</span>

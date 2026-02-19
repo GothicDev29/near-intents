@@ -10,7 +10,7 @@ export function Navigation() {
           {/* Logo */}
           <div className="flex items-center gap-1 text-xl font-bold">
             <span className="text-white">near</span>
-            <span className="text-orange-600">Intents</span>
+            <span className="text-brand-orange-600">Intents</span>
           </div>
 
           {/* Navigation Links */}

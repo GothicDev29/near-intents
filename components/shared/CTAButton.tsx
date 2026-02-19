@@ -23,9 +23,9 @@ export function CTAButton({
   let baseStyles = `font-bold tracking-[0.2em] uppercase transition-all duration-300 flex items-center gap-3 group overflow-hidden rounded-[4px] ${className} ${paddingClass}`;
 
   if (variant === 'solid') {
-    baseStyles += ` bg-orange-600 border border-orange-600 text-black hover:bg-orange-500 hover:border-orange-500`;
+    baseStyles += ` bg-brand-orange-600 border border-brand-orange-600 text-black hover:bg-brand-orange-500 hover:border-brand-orange-500`;
   } else {
-    baseStyles += ` bg-black border border-orange-600 text-orange-500 hover:bg-orange-600 hover:text-white`;
+    baseStyles += ` bg-black border border-brand-orange-600 text-brand-orange hover:bg-brand-orange-600 hover:text-white`;
   }
 
   return (
