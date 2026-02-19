@@ -24,7 +24,7 @@ export function TestimonialsSection() {
                 </div>
               </div>
             </RevealOnScroll>
-            <RevealOnScroll delay={100}>
+            <RevealOnScroll delay={0}>
               <div className="md:text-right">
                 <div className="flex gap-2 mb-4 justify-end text-orange-500/50">
                   <span className="text-xs">+</span>
@@ -44,7 +44,7 @@ export function TestimonialsSection() {
             </RevealOnScroll>
           </div>
           <div className="max-w-4xl mx-auto text-center">
-            <RevealOnScroll delay={200}>
+            <RevealOnScroll delay={0}>
               <p className="text-3xl md:text-5xl font-bold leading-tight tracking-tight">
                 «This integration is what crypto is all about:{' '}
                 <span className="text-orange-500">empowering</span> users to exchange value directly, on their terms.»
@@ -57,7 +57,7 @@ export function TestimonialsSection() {
           </div>
           <div className="flex justify-end">
             <div className="max-w-3xl text-right">
-              <RevealOnScroll delay={300}>
+              <RevealOnScroll delay={0}>
                 <div className="flex gap-2 mb-4 justify-end text-orange-500/50 opacity-50 tracking-[0.5em] text-xs">
                   |||||||||||||||||
                 </div>
