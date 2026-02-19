@@ -34,7 +34,9 @@ const config: Config = {
         'cyber-scan': 'cyber-scan 3s ease-in-out infinite',
         'equalizer': 'equalizer 1.5s ease-in-out infinite',
         'blink': 'blink 2s ease-in-out infinite',
+        'glitch': 'glitch 2s linear infinite',
         'float-diagonal': 'float-diagonal 3s ease-in-out infinite',
+        'tick-wave': 'tick-wave 1.4s ease-in-out infinite',
       },
       keyframes: {
         marquee: {
@@ -61,9 +63,23 @@ const config: Config = {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.3' },
         },
+        'glitch': {
+          '0%': { opacity: '1' },
+          '20%': { opacity: '1' },
+          '21%': { opacity: '0' },
+          '22%': { opacity: '1' },
+          '69%': { opacity: '1' },
+          '70%': { opacity: '0' },
+          '71%': { opacity: '1' },
+          '100%': { opacity: '1' },
+        },
         'float-diagonal': {
           '0%, 100%': { transform: 'translate(0, 0)' },
           '50%': { transform: 'translate(10px, -10px)' },
+        },
+        'tick-wave': {
+          '0%, 100%': { height: '4px' },
+          '50%': { height: '16px' },
         },
       },
     },
