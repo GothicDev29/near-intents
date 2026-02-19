@@ -14,13 +14,16 @@ export function Hero() {
   const doubledLogos = [...LOGOS, ...LOGOS];
   const sectionRef = useRef<HTMLElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const buttonsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let target = 0;
     let current = 0;
     let rafId: number;
+    let buttonHovered = false;
 
     const handleMouseMove = (e: MouseEvent) => {
+      if (buttonHovered) return;
       if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
       const dist = Math.hypot(e.clientX - rect.right, e.clientY - rect.top);
@@ -30,18 +33,28 @@ export function Hero() {
       target = raw * raw * (3 - 2 * raw);
     };
 
+    const handleButtonEnter = () => { buttonHovered = true; target = 1; };
+    const handleButtonLeave = () => { buttonHovered = false; };
+
     const tick = () => {
       // lerp: sigue al target con inercia
       current += (target - current) * 0.06;
 
+      // eclipse: fade a 0 conforme baja el scroll (completo al 60% de la altura del viewport)
+      const scrollFactor = Math.max(0, 1 - window.scrollY / (window.innerHeight * 0.4));
+
       if (imageWrapperRef.current) {
         if (current > 0.001) {
-          const blur = current * 5;
-          const spread = current * 60;
-          const opacity = current * 0.55;
-          imageWrapperRef.current.style.filter = `blur(${blur.toFixed(2)}px) drop-shadow(0 0 ${spread.toFixed(1)}px rgba(255, 100, 20, ${opacity.toFixed(2)}))`;
+          const blur = current * 12;
+          const spread = current * 160;
+          const glowOpacity = current * 0.85;
+          const imgOpacity = (0.6 + current * 0.4) * scrollFactor;
+          const brightness = 0.85 + current * 0.45;
+          imageWrapperRef.current.style.opacity = imgOpacity.toFixed(3);
+          imageWrapperRef.current.style.filter = `brightness(${brightness.toFixed(3)}) blur(${blur.toFixed(2)}px) drop-shadow(0 0 ${spread.toFixed(1)}px rgba(255, 100, 20, ${glowOpacity.toFixed(2)}))`;
         } else {
-          imageWrapperRef.current.style.filter = 'none';
+          imageWrapperRef.current.style.opacity = (0.6 * scrollFactor).toFixed(3);
+          imageWrapperRef.current.style.filter = 'brightness(0.85)';
         }
       }
 
@@ -51,9 +64,15 @@ export function Hero() {
     window.addEventListener('mousemove', handleMouseMove);
     rafId = requestAnimationFrame(tick);
 
+    const buttons = buttonsRef.current;
+    buttons?.addEventListener('mouseenter', handleButtonEnter);
+    buttons?.addEventListener('mouseleave', handleButtonLeave);
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(rafId);
+      buttons?.removeEventListener('mouseenter', handleButtonEnter);
+      buttons?.removeEventListener('mouseleave', handleButtonLeave);
     };
   }, []);
 
@@ -106,26 +125,26 @@ export function Hero() {
 
             <div className="w-full md:w-1/2 h-px bg-gradient-to-r from-brand-orange-500 to-transparent my-6"></div>
 
-            <p className="mt-4 text-xl text-zinc-400 max-w-xl leading-relaxed">
+            <p className="mt-4 text-[18px] text-zinc-400 max-w-2xl leading-relaxed [text-wrap:balance]">
               NEAR Intents powers one-click cross-chain swaps, unified liquidity,
               and universal execution for onchain markets.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div ref={buttonsRef} className="mt-10 flex flex-wrap gap-4">
               <CTAButton text="Start Swapping" />
               <CTAButton text="Integrate Intents" variant="solid" />
             </div>
 
             {/* Decorative +++ pattern */}
-            <div className="mt-12 -ml-8 md:-ml-20 font-mono text-xs text-zinc-600 tracking-[0.15em]">
+            <div className="mt-12 -ml-8 md:-ml-20 font-mono text-sm text-zinc-600 tracking-[0.15em]">
               {'+'  .repeat(26)}
             </div>
 
             <div className="mt-12">
-              <div className="text-4xl md:text-5xl font-bold text-brand-orange tracking-tight">
+              <div className="text-3xl md:text-4xl font-bold text-brand-orange tracking-tight">
                 $13B+
               </div>
-              <div className="text-white mt-1 text-lg font-medium">
+              <div className="text-white mt-1 text-3xl md:text-4xl font-medium">
                 all-time volume across <span className="text-brand-orange font-bold">35+ chains</span>
               </div>
             </div>

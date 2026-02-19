@@ -40,6 +40,19 @@ body {
   filter: blur(30px);
 }
 
+/* Feature Card hover — gradient slides upper-right on hover, darkening the card */
+.feature-card-bg {
+  background: linear-gradient(225deg, #A7A7A7 0%, #272727 100%);
+  background-size: 133% 133%;
+  background-position: 100% 0%;
+  transition: background-position 0.85s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.15s ease;
+}
+
+.feature-card-bg:hover {
+  background-position: 0% 100%;
+}
+
 /* Feature Card Gradients */
 .feature-card-gradient {
   background: linear-gradient(

@@ -28,7 +28,7 @@ export function Ecosystem() {
     .map((_, i) => GRID_CHAINS[i % GRID_CHAINS.length]);
 
   return (
-    <section id="ecosystem" className="relative py-32 px-4 sm:px-6 lg:px-8 bg-[#1E1E1E]">
+    <section id="ecosystem" className="relative py-32 px-4 sm:px-6 lg:px-8 bg-[#000]">
       <div className="max-w-7xl mx-auto">
         <RevealOnScroll>
           <div className="text-center mb-16">

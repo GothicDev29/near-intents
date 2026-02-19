@@ -10,7 +10,7 @@ export function HowItWorks() {
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-6 tracking-tight text-white">How it works</h2>
             <div className="w-full h-px bg-gradient-to-r from-brand-orange-500 to-transparent my-6"></div>
-            <p className="text-zinc-400 leading-relaxed mb-8 text-sm md:text-base max-w-2xl">
+            <p className="text-zinc-400 leading-relaxed mb-8 text-[18px] max-w-2xl">
               NEAR Intents uses a novel transaction architecture to abstract away cross-chain complexity and maximize performance, security, and efficiency for DeFi apps, AI agents and end users.
             </p>
             <CTAButton text="Read Technical Overview" />

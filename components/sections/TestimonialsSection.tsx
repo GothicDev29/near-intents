@@ -74,7 +74,7 @@ export function TestimonialsSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {[
             {
               title: 'INSTANT EXECUTION',
@@ -89,14 +89,14 @@ export function TestimonialsSection() {
               desc: 'Integrate once through a single API and access liquidity across every major chain, so your dApp can accelerate time to market, reduce operational overhead, and stay competitive with faster, cheaper, safer swaps across 125+ assets.',
             },
           ].map((card, i) => (
-            <div key={i} className="bg-[#FB4D01] rounded-[16px] p-8 min-h-[300px] flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
+            <div key={i} className="bg-[#FB4D01] rounded-[16px] p-8 min-h-[300px] flex flex-col justify-between">
               <div>
-                <h3 className="font-light text-2xl mb-6 tracking-wide flex flex-col gap-1 uppercase font-mono">
+                <h3 className="font-light text-[32px] leading-[1.1] mb-6 tracking-wide flex flex-col gap-1 uppercase font-mono">
                   <span className="text-sm font-bold">+</span>
                   <span className="text-[#ECECE9]">{card.title.split(' ')[0]}</span>
-                  <span className="text-[#1E1E1E]">{card.title.split(' ').slice(1).join(' ')}</span>
+                  <span className="text-[#1E1E1E] -mt-3">{card.title.split(' ').slice(1).join(' ')}</span>
                 </h3>
-                <p className="text-[#ECECE9] text-[13px] leading-relaxed font-medium">{card.desc}</p>
+                <p className="text-[#ECECE9] text-[16px] leading-relaxed font-normal">{card.desc}</p>
               </div>
             </div>
           ))}

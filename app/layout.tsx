@@ -7,17 +7,17 @@ import { LenisProvider } from '@/lib/lenis-provider';
 const fkGroteskMono = localFont({
   src: [
     {
-      path: '../public/fonts/fkgroteskmono/otf/FKGroteskMono-Regular.otf',
+      path: '../public/fonts/fkgroteskmono/woff2/FKGroteskMono-Regular.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../public/fonts/fkgroteskmono/otf/FKGroteskMono-Medium.otf',
+      path: '../public/fonts/fkgroteskmono/woff2/FKGroteskMono-Medium.woff2',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../public/fonts/fkgroteskmono/otf/FKGroteskMono-Bold.otf',
+      path: '../public/fonts/fkgroteskmono/woff2/FKGroteskMono-Bold.woff2',
       weight: '700',
       style: 'normal',
     },

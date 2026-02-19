@@ -4,7 +4,7 @@ import { Github, Twitter, Send, Youtube, ArrowRight } from 'lucide-react';
 
 export function FooterCTA() {
   return (
-    <footer className="py-40 px-8 text-center bg-[#1E1E1E] relative overflow-hidden">
+    <footer className="py-40 px-8 text-center bg-[#000] relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-orange-900/50 to-transparent"></div>
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-brand-orange-600/10 blur-[150px] rounded-full" />
 

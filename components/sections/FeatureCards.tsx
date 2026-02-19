@@ -7,10 +7,10 @@ import { SlidingBars } from '@/components/effects/SlidingBars';
 export function FeatureCards() {
   return (
     <section className="py-24 px-8 md:px-20 bg-[#242424] relative">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
         {/* Card 1: SWAP */}
         <RevealOnScroll delay={0}>
-          <div className="border border-white/10 p-8 rounded-[16px] h-full relative group hover:border-[#FDEB8F]/30 transition-all shadow-lg min-h-[480px] flex flex-col overflow-hidden" style={{ background: 'linear-gradient(225deg, #A7A7A7 0%, #272727 100%)' }}>
+          <div className="feature-card-bg border border-white/10 p-8 rounded-[16px] h-full relative group hover:border-[#FDEB8F]/30 shadow-lg min-h-[480px] flex flex-col overflow-hidden">
             {/* Label */}
             <span className="text-[16px] font-mono text-white mb-6 block">{`{ 01 SWAP`}</span>
 
@@ -57,7 +57,7 @@ export function FeatureCards() {
             {/* Descripción con + prefijo */}
             <div className="flex gap-3">
               <span className="text-[#FDEB8F] text-[18px] mt-px shrink-0 [font-family:var(--font-grotesk-mono)]">+</span>
-              <p className="text-[16px] text-[#FFFFFF] leading-relaxed uppercase tracking-wider [font-family:var(--font-grotesk-mono)]">
+              <p className="text-[16px] font-normal text-[#FFFFFF] leading-relaxed uppercase tracking-wider [font-family:var(--font-grotesk-mono)]">
                 NO MANUAL GAS JUGGLING OR BRIDGE MANAGEMENT REQUIRED. EXCHANGE-GRADE EXECUTION, WITHOUT GIVING UP CONTROL OF YOUR WALLET
               </p>
             </div>
@@ -68,7 +68,7 @@ export function FeatureCards() {
 
         {/* Card 2: EARN */}
         <RevealOnScroll delay={0}>
-          <div className="border border-white/10 p-8 rounded-[16px] h-full relative group hover:border-[#FDEB8F]/30 transition-all shadow-lg min-h-[480px] flex flex-col overflow-hidden" style={{ background: 'linear-gradient(225deg, #A7A7A7 0%, #272727 100%)' }}>
+          <div className="feature-card-bg border border-white/10 p-8 rounded-[16px] h-full relative group hover:border-[#FDEB8F]/30 shadow-lg min-h-[480px] flex flex-col overflow-hidden">
             {/* Label */}
             <span className="text-[16px] font-mono text-white mb-6 block">{`{ 02 EARN`}</span>
 
@@ -89,7 +89,7 @@ export function FeatureCards() {
 
               <div className="flex gap-3 mb-8">
                 <span className="text-[#FDEB8F] text-[16px] mt-px shrink-0 [font-family:var(--font-grotesk-mono)]">+</span>
-                <p className="text-[16px] text-[#FFFFFF] leading-relaxed uppercase tracking-wider [font-family:var(--font-grotesk-mono)]">
+                <p className="text-[16px] font-normal text-[#FFFFFF] leading-relaxed uppercase tracking-wider [font-family:var(--font-grotesk-mono)]">
                   ACCESS ONCHAIN YIELD ACROSS SUPPORTED TOKENS AND CHAINS– BUILT AROUND YOUR CONTROL.
                 </p>
               </div>
@@ -101,7 +101,7 @@ export function FeatureCards() {
 
         {/* Card 3: CONFIDENTIAL */}
         <RevealOnScroll delay={0}>
-          <div className="border border-white/10 p-8 rounded-[16px] h-full relative group hover:border-[#FDEB8F]/30 transition-all shadow-lg min-h-[480px] flex flex-col overflow-hidden" style={{ background: 'linear-gradient(225deg, #A7A7A7 0%, #272727 100%)' }}>
+          <div className="feature-card-bg border border-white/10 p-8 rounded-[16px] h-full relative group hover:border-[#FDEB8F]/30 shadow-lg min-h-[480px] flex flex-col overflow-hidden">
             {/* Label */}
             <span className="text-[16px] font-mono text-white mb-6 block">{`{ 03 CONFIDENTIAL`}</span>
 
@@ -122,7 +122,7 @@ export function FeatureCards() {
 
               <div className="flex gap-3 mb-8">
                 <span className="text-[#FDEB8F] text-[16px] mt-px shrink-0 [font-family:var(--font-grotesk-mono)]">+</span>
-                <p className="text-[16px] text-[#FFFFFF] leading-relaxed uppercase tracking-wider [font-family:var(--font-grotesk-mono)]">
+                <p className="text-[16px] font-normal text-[#FFFFFF] leading-relaxed uppercase tracking-wider [font-family:var(--font-grotesk-mono)]">
                   KEEP TRANSACTIONS OUT OF PUBLIC VIEW AND PROTECT YOUR CROSS-CHAIN POSITIONS.
                 </p>
               </div>

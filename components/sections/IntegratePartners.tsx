@@ -90,7 +90,7 @@ export function IntegratePartners() {
       <div className="max-w-7xl mx-auto mb-12">
         <h2 className="text-4xl font-bold mb-3">Integrate NEAR Intents</h2>
         <div className="w-full h-px mb-4" style={{ background: 'linear-gradient(to right, #FB4D01, #242424)' }} />
-        <p className="text-white/50 text-sm max-w-md leading-relaxed">
+        <p className="text-white/50 text-[16px] max-w-2xl leading-relaxed [text-wrap:balance]">
           Join the fast-growing ecosystem of cross-chain dApps, wallets, infrastructure providers, and more who are building with Intents.
         </p>
       </div>
