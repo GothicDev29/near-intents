@@ -4,7 +4,7 @@ import { CTAButton } from '@/components/shared/CTAButton';
 
 export function HowItWorks() {
   return (
-    <section className="py-32 px-8 md:px-20 bg-[#1E1E1E] relative">
+    <section className="py-32 px-8 md:px-20 relative" style={{ background: 'linear-gradient(to bottom, #000000, #242424)' }}>
       <div className="max-w-7xl mx-auto">
         <RevealOnScroll>
           <div className="mb-16">
@@ -17,19 +17,17 @@ export function HowItWorks() {
           </div>
         </RevealOnScroll>
 
-        <RevealOnScroll delay={0.2}>
-          <div className="relative w-full rounded-[16px] border border-white/10 overflow-hidden min-h-[500px] flex items-center justify-center p-4 md:p-8">
-            <Image
-              src="/images/how-it-works/sketch-27 1.png"
-              alt="How NEAR Intents Works"
-              width={1200}
-              height={600}
-              quality={100}
-              priority={false}
-              className="w-full h-auto object-contain"
-            />
-          </div>
-        </RevealOnScroll>
+        <div className="relative w-full">
+          <Image
+            src="/images/telemetry.png"
+            alt="How NEAR Intents Works"
+            width={1200}
+            height={600}
+            quality={100}
+            priority={false}
+            className="w-full h-auto object-contain mix-blend-lighten"
+          />
+        </div>
       </div>
     </section>
   );

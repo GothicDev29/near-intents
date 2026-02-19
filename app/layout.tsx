@@ -3,6 +3,28 @@ import localFont from 'next/font/local';
 import './globals.css';
 import { LenisProvider } from '@/lib/lenis-provider';
 
+// FK Grotesk Mono
+const fkGroteskMono = localFont({
+  src: [
+    {
+      path: '../public/fonts/fkgroteskmono/otf/FKGroteskMono-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/fkgroteskmono/otf/FKGroteskMono-Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/fkgroteskmono/otf/FKGroteskMono-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-grotesk-mono',
+});
+
 // FK Grotesk - Loaded from local files
 const fkGrotesk = localFont({
   src: [
@@ -63,7 +85,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${fkGrotesk.className} antialiased`} suppressHydrationWarning>
+      <body className={`${fkGrotesk.variable} ${fkGroteskMono.variable} ${fkGrotesk.className} antialiased`} suppressHydrationWarning>
         <LenisProvider>{children}</LenisProvider>
       </body>
     </html>

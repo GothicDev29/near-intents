@@ -17,10 +17,10 @@ export function CTAButton({
   variant = 'ghost',
   onClick
 }: CTAButtonProps) {
-  const paddingClass = small ? 'px-5 py-2 text-xs' : 'px-8 py-4 text-sm';
-  const iconSize = small ? 12 : 14;
+  const paddingClass = small ? 'px-5 py-2 text-xs' : 'px-8 py-4';
+  const iconSize = small ? 12 : 20;
 
-  let baseStyles = `font-bold tracking-[0.2em] uppercase transition-all duration-300 flex items-center gap-3 group overflow-hidden rounded-[4px] ${className} ${paddingClass}`;
+  let baseStyles = `font-normal text-[18px] tracking-[0.2em] uppercase transition-all duration-300 flex items-center gap-3 group overflow-hidden rounded-[8px] [font-family:var(--font-grotesk-mono)] ${className} ${paddingClass}`;
 
   if (variant === 'solid') {
     baseStyles += ` bg-brand-orange-600 border border-brand-orange-600 text-black hover:bg-brand-orange-500 hover:border-brand-orange-500`;
@@ -32,11 +32,11 @@ export function CTAButton({
     <button onClick={onClick} className={baseStyles}>
       <Plus
         size={iconSize}
-        className={`transition-transform duration-500 ease-out group-hover:rotate-180 ${
+        className={`transition-transform duration-500 ease-out group-hover:rotate-90 ${
           variant === 'solid' ? 'text-black' : ''
         }`}
       />
-      <div className="relative h-[1.2em] overflow-hidden">
+      <div className="relative overflow-hidden leading-none translate-y-[2px]">
         <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full">
           {text}
         </span>
