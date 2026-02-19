@@ -89,14 +89,14 @@ export function TestimonialsSection() {
               desc: 'Integrate once through a single API and access liquidity across every major chain, so your dApp can accelerate time to market, reduce operational overhead, and stay competitive with faster, cheaper, safer swaps across 125+ assets.',
             },
           ].map((card, i) => (
-            <div key={i} className="bg-[#1E1E1E] border border-white/10 rounded-[16px] p-8 min-h-[300px] flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
+            <div key={i} className="bg-[#FB4D01] rounded-[16px] p-8 min-h-[300px] flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
               <div>
-                <h3 className="text-[#FFFFFF] font-light text-2xl mb-6 tracking-wide flex flex-col gap-1 uppercase font-mono">
-                  <span className="text-sm font-bold text-[#FDEB8F]">+</span>
-                  <span>{card.title.split(' ')[0]}</span>
-                  <span className="text-[#FDEB8F]">{card.title.split(' ').slice(1).join(' ')}</span>
+                <h3 className="font-light text-2xl mb-6 tracking-wide flex flex-col gap-1 uppercase font-mono">
+                  <span className="text-sm font-bold">+</span>
+                  <span className="text-[#ECECE9]">{card.title.split(' ')[0]}</span>
+                  <span className="text-[#1E1E1E]">{card.title.split(' ').slice(1).join(' ')}</span>
                 </h3>
-                <p className="text-[#FFFFFF] text-[13px] leading-relaxed font-medium">{card.desc}</p>
+                <p className="text-[#ECECE9] text-[13px] leading-relaxed font-medium">{card.desc}</p>
               </div>
             </div>
           ))}
