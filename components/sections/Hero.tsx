@@ -1,25 +1,14 @@
 'use client';
 
-import { Globe } from 'lucide-react';
 import { CTAButton } from '@/components/shared/CTAButton';
 import { AuroraRing } from '@/components/effects/AuroraRing';
 import Image from 'next/image';
 import { useRef, useEffect } from 'react';
 
-const LOGOS = [
-  'Ethereum',
-  'Solana',
-  'Bitcoin',
-  'NEAR',
-  'Avalanche',
-  'Polygon',
-  'Arbitrum',
-  'Optimism',
-  'Base',
-  'Cosmos',
-  'Cardano',
-  'Polkadot',
-];
+const LOGOS = Array.from({ length: 20 }, () => ({
+  src: '/images/slider-logos/near-protocol-near-logo.png',
+  alt: 'NEAR Protocol',
+}));
 
 export function Hero() {
   const doubledLogos = [...LOGOS, ...LOGOS];
@@ -147,15 +136,16 @@ export function Hero() {
       {/* Marquee */}
       <div className="relative z-10 w-full pb-8">
         <div className="w-full overflow-hidden py-8 border-y border-white/5">
-          <div className="animate-marquee flex items-center gap-16 px-8 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+          <div className="animate-marquee flex items-center gap-16 px-8">
             {doubledLogos.map((logo, i) => (
-              <div key={i} className="flex items-center gap-3 group cursor-default min-w-max">
-                <div className="w-10 h-10 rounded-[16px] bg-zinc-900 border border-white/10 flex items-center justify-center group-hover:border-brand-orange-500/50 transition-colors">
-                  <Globe size={18} className="text-zinc-400 group-hover:text-brand-orange transition-colors" />
-                </div>
-                <span className="text-sm font-bold uppercase tracking-widest text-zinc-500 group-hover:text-white transition-colors">
-                  {logo}
-                </span>
+              <div key={i} className="shrink-0 rounded-full border border-[#333333] p-3">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={120}
+                  height={40}
+                  className="object-contain h-8 w-auto opacity-50 hover:opacity-100 transition-opacity invert"
+                />
               </div>
             ))}
           </div>

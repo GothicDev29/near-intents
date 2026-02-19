@@ -2,7 +2,6 @@ import { Navigation } from '@/components/sections/Navigation';
 import { Hero } from '@/components/sections/Hero';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { FeatureCards } from '@/components/sections/FeatureCards';
-import { IntegratePartners } from '@/components/sections/IntegratePartners';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 import { Ecosystem } from '@/components/sections/Ecosystem';
 import { NewsSection } from '@/components/sections/NewsSection';
@@ -15,7 +14,6 @@ export default function Home() {
       <Hero />
       <HowItWorks />
       <FeatureCards />
-      <IntegratePartners />
       <TestimonialsSection />
       <Ecosystem />
       <NewsSection />
