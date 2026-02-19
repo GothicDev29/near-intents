@@ -7,6 +7,8 @@ import { LenisProvider } from '@/lib/lenis-provider';
 // To use FK Grotesk instead, replace with localFont and add font files
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
   variable: '--font-grotesk',
 });
 
