@@ -15,7 +15,7 @@ const ROW: string[] = [
 
 export function Ecosystem() {
   return (
-    <section id="ecosystem" className="relative py-12 md:py-16 px-8 md:px-20 bg-[#000]">
+    <section id="ecosystem" className="relative py-16 px-8 md:px-20 bg-[#000]">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -59,7 +59,7 @@ export function Ecosystem() {
                 <SmallEcosystemLogo key={i} name={name} src={LOGO} variant="dark" logoColor="black" />
               ))}
             </div>
-            <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9))' }}></div>
+            <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.93))' }}></div>
           </div>
         </RevealOnScroll>
 

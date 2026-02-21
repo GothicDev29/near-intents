@@ -32,7 +32,7 @@ export function useScrollReveal(options: UseScrollRevealOptions = {}) {
           immediateRender: false,
           scrollTrigger: {
             trigger: ref.current,
-            start: 'top 80%',
+            start: 'top 95%',
             toggleActions: 'play none none none',
           },
         }

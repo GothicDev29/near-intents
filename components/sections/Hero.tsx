@@ -118,7 +118,7 @@ export function Hero() {
           </div>
 
           <div className="max-w-4xl">
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9]">
+            <h1 className="text-6xl md:text-8xl font-bold tracking-normal leading-[0.9]">
               <span className="text-4xl md:text-5xl text-brand-orange-500 tracking-normal">NearIntents:</span> <br />
               The universal <br />
               liquidity protocol
@@ -132,7 +132,7 @@ export function Hero() {
             </p>
 
             <div ref={buttonsRef} className="mt-10 flex flex-wrap gap-4">
-              <CTAButton text="Start Swapping" href="https://near-intents.org/" />
+              <CTAButton text="Start Swapping" href="https://near.com/" />
               <CTAButton text="Build With Intents" href="https://docs.near-intents.org/near-intents" />
             </div>
 
