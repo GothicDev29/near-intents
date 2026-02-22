@@ -56,26 +56,17 @@ export function IntegratePartners() {
       </div>
 
       {/* Carousel with arrows */}
-      <div className="relative max-w-7xl mx-auto flex items-center justify-center gap-8">
-        {/* Left Arrow */}
-        <button
-          onClick={handlePrev}
-          className="flex-shrink-0 z-20 p-2 text-white/50 hover:text-white transition-colors duration-200"
-          aria-label="Previous"
-        >
-          <ChevronLeft size={40} />
-        </button>
-
+      <div className="relative max-w-7xl mx-auto flex flex-col items-center justify-center gap-2">
         {/* Carousel container */}
-        <div className="overflow-hidden flex-1">
+        <div className="overflow-hidden w-full">
           <div
             ref={trackRef}
             className="flex gap-16 transition-transform duration-300 ease-out"
             style={{ transform: `translateX(-${offset}px)` }}
           >
             {items.map((partner, i) => (
-              <div key={i} className="shrink-0 w-[220px] flex flex-col items-center text-center">
-                <div className="w-[220px] h-[220px] rounded-2xl overflow-hidden mb-4 bg-zinc-900 flex items-center justify-center">
+              <div key={i} className="shrink-0 w-[160px] sm:w-[200px] md:w-[220px] flex flex-col items-center text-center">
+                <div className="w-[160px] sm:w-[200px] md:w-[220px] h-[160px] sm:h-[200px] md:h-[220px] rounded-2xl overflow-hidden mb-4 bg-zinc-900 flex items-center justify-center">
                   <Image
                     src={LOGO_PLACEHOLDER}
                     alt={partner.name}
@@ -94,14 +85,26 @@ export function IntegratePartners() {
           </div>
         </div>
 
-        {/* Right Arrow */}
-        <button
-          onClick={handleNext}
-          className="flex-shrink-0 z-20 p-2 text-white/50 hover:text-white transition-colors duration-200"
-          aria-label="Next"
-        >
-          <ChevronRight size={40} />
-        </button>
+        {/* Navigation arrows - bottom left */}
+        <div className="flex items-center justify-start gap-4 w-full mt-8">
+          {/* Left Arrow */}
+          <button
+            onClick={handlePrev}
+            className="z-20 p-2 bg-white/10 hover:bg-white/20 text-white/50 hover:text-white transition-all duration-200 rounded-lg"
+            aria-label="Previous"
+          >
+            <ChevronLeft size={20} />
+          </button>
+
+          {/* Right Arrow */}
+          <button
+            onClick={handleNext}
+            className="z-20 p-2 bg-white/10 hover:bg-white/20 text-white/50 hover:text-white transition-all duration-200 rounded-lg"
+            aria-label="Next"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
       </div>
     </section>
   );

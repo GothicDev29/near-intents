@@ -9,7 +9,7 @@ export function TestimonialsSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <RevealOnScroll>
               <div>
-                <div className="flex gap-2 mb-4 text-brand-orange/50">
+                <div className="flex gap-2 mb-4 text-brand-orange">
                   <span className="text-xs">/</span>
                   <span className="text-xs">/</span>
                   <span className="text-xs">/</span>
@@ -26,7 +26,7 @@ export function TestimonialsSection() {
             </RevealOnScroll>
             <RevealOnScroll delay={0}>
               <div className="md:text-right">
-                <div className="flex gap-2 mb-4 justify-end text-brand-orange/50">
+                <div className="flex gap-2 mb-4 justify-end text-brand-orange">
                   <span className="text-xs">+</span>
                   <span className="text-xs">+</span>
                   <span className="text-xs">+</span>
@@ -43,7 +43,7 @@ export function TestimonialsSection() {
               </div>
             </RevealOnScroll>
           </div>
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="mt-2 max-w-4xl mx-auto text-center">
             <RevealOnScroll delay={0}>
               <p className="text-2xl md:text-3xl font-bold leading-tight tracking-tight">
                 «This integration is what crypto is all about:{' '}
@@ -58,7 +58,7 @@ export function TestimonialsSection() {
           <div className="flex justify-end">
             <div className="max-w-3xl text-right">
               <RevealOnScroll delay={0}>
-                <div className="flex gap-2 mb-4 justify-end text-brand-orange/50 opacity-50 tracking-[0.5em] text-xs">
+                <div className="flex gap-2 mb-4 justify-end text-brand-orange tracking-[0.5em] text-xs">
                   |||||||||||||||||
                 </div>
                 <p className="text-xl md:text-2xl font-bold leading-tight text-zinc-300">
@@ -72,36 +72,6 @@ export function TestimonialsSection() {
               </RevealOnScroll>
             </div>
           </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-          {[
-            {
-              title: 'INSTANT EXECUTION',
-              desc: 'Execute cross-chain swaps in milliseconds with optimized routing and low, predictable fees. With NEAR Intents, users experience faster transactions, near-zero slippage, and reliable performance.',
-            },
-            {
-              title: 'VERIFIABLE INFRASTRUCTURE',
-              desc: 'Intents is run on secure, verifiable infrastructure with no single points of failure. Every swap completes safely and transparently so users can execute with confidence.',
-            },
-            {
-              title: 'UNIFIED LIQUIDITY',
-              desc: 'Integrate once through a single API and access liquidity across every major chain, so your dApp can accelerate time to market, reduce operational overhead, and stay competitive with faster, cheaper, safer swaps across 125+ assets.',
-            },
-          ].map((card, i) => (
-            <div key={i} className="bg-[#FB4D01] rounded-[16px] p-8 min-h-[300px] flex flex-col justify-between">
-              <div className="flex gap-1">
-                <span className="text-[20px] text-white leading-none mt-0 flex-shrink-0">+</span>
-                <div>
-                  <h3 className="font-light text-[24px] leading-none tracking-wide uppercase font-mono mb-6 flex flex-col gap-0">
-                    <span className="text-[#ECECE9]">{card.title.split(' ')[0]}</span>
-                    <span className="text-[#1E1E1E]">{card.title.split(' ').slice(1).join(' ')}</span>
-                  </h3>
-                  <p className="text-[#ECECE9] text-[16px] leading-relaxed font-normal">{card.desc}</p>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
