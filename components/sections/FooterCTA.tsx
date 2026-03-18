@@ -20,8 +20,8 @@ export function FooterCTA() {
       if (buttonHovered) return;
       if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
-      // focal point: bottom-left corner
-      const dist = Math.hypot(e.clientX - rect.left, e.clientY - rect.bottom);
+      // focal point: bottom-right corner
+      const dist = Math.hypot(e.clientX - rect.right, e.clientY - rect.bottom);
       const maxDist = Math.hypot(rect.width, rect.height) * 0.65;
       const raw = Math.max(0, 1 - dist / maxDist);
       target = raw * raw * (3 - 2 * raw);
@@ -35,7 +35,7 @@ export function FooterCTA() {
 
       if (imageWrapperRef.current) {
         if (current > 0.001) {
-          const blur = current * 12;
+          const blur = current * 4;
           const imgOpacity = 0.6 + current * 0.4;
           const brightness = 0.85 + current * 0.45;
           imageWrapperRef.current.style.opacity = imgOpacity.toFixed(3);
@@ -65,7 +65,7 @@ export function FooterCTA() {
   }, []);
 
   return (
-    <footer ref={sectionRef} className="py-8 md:py-12 px-8 md:px-20 bg-[#000] relative overflow-hidden">
+    <footer ref={sectionRef} className="py-8 md:py-12 px-8 md:px-20 pb-32 bg-[#000000] relative">
 
       {/* Background image */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -74,31 +74,30 @@ export function FooterCTA() {
             src="/images/footer-bg.jpg"
             alt=""
             fill
-            className="object-cover object-left-top"
+            className="object-cover object-right-top"
+            style={{ transform: 'scaleX(-1)' }}
           />
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10 pb-20">
         <>
 
           {/* Title + line + button */}
-          <div className="flex justify-center">
-            <div className="inline-block w-fit">
-              <h2 className="text-[28px] sm:text-[36px] md:text-[48px] font-bold text-white leading-[1.05]">
-                Integrate and swap with Intents today
-              </h2>
+          <div>
+            <h2 className="text-[28px] sm:text-[36px] md:text-[48px] font-bold text-white leading-[1.05]">
+              Integrate and swap with Intents today
+            </h2>
 
-              <div
-                className="w-full h-px mt-6"
-                style={{ background: 'linear-gradient(to right, #FB4D01, transparent)' }}
-              />
+            <div
+              className="w-full h-px mt-6"
+              style={{ background: 'linear-gradient(to right, #FB4D01, transparent)' }}
+            />
 
-              <div ref={buttonsRef} className="flex flex-col md:flex-row md:justify-between gap-4 mt-6 mb-12">
-                <CTAButton text="Go To near.org" href="https://www.near.org/intents" />
-                <CTAButton text="Talk with the team" href="https://t.me/near_intents" />
-              </div>
+            <div ref={buttonsRef} className="flex flex-wrap gap-4 mt-6 mb-12">
+              <CTAButton text="Go To near.org" href="https://www.near.org/intents" />
+              <CTAButton text="Talk with the team" href="https://t.me/near_intents" />
             </div>
           </div>
 
