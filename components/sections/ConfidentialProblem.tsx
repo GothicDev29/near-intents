@@ -12,7 +12,7 @@ export function ConfidentialProblem() {
         <div className="w-full h-px mb-12" style={{ background: 'linear-gradient(to right, #FB4D01, transparent)' }} />
 
         <RevealOnScroll>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-start">
             {/* Left column: Text content */}
             <div className="space-y-6">
               <p className="text-lg text-zinc-400 leading-relaxed">
@@ -32,13 +32,13 @@ export function ConfidentialProblem() {
             </div>
 
             {/* Right column: Image */}
-            <div className="flex items-center justify-center max-h-80 overflow-hidden">
+            <div className="flex items-center justify-center max-h-96 overflow-hidden">
               <Image
                 src="/images/Confidentiality-built-img1.png"
                 alt="Confidentiality built into execution illustration"
                 width={500}
                 height={400}
-                className="w-auto h-80 object-contain"
+                className="w-auto h-96 object-contain"
               />
             </div>
           </div>
