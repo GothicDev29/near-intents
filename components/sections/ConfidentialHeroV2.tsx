@@ -16,7 +16,11 @@ export function ConfidentialHeroV2() {
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
 
-      gradientRef.current.style.background = `radial-gradient(600px at ${x}px ${y}px, rgba(251, 77, 1, 0.15) 0%, transparent 80%)`;
+      gradientRef.current.style.background = `
+        repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(0, 0, 0, 0.8) 30px, rgba(0, 0, 0, 0.8) 31px),
+        repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(0, 0, 0, 0.8) 30px, rgba(0, 0, 0, 0.8) 31px),
+        radial-gradient(600px at ${x}px ${y}px, rgba(251, 77, 1, 0.35) 0%, transparent 80%)
+      `;
     };
 
     const section = sectionRef.current;
