@@ -22,7 +22,7 @@ const useCases = [
 
 export function ConfidentialUseCasesGlass() {
   return (
-    <section className="py-20 px-8 md:px-20 bg-[#0A0D14] relative">
+    <section className="py-20 px-8 md:px-20 bg-[#000000] relative">
       <div className="max-w-7xl mx-auto">
         <RevealOnScroll>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">

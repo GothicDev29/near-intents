@@ -5,7 +5,7 @@ import { RevealOnScroll } from '@/components/shared/RevealOnScroll';
 
 export function ConfidentialHowItWorksV2() {
   return (
-    <section id="confidential-how-it-works" className="py-20 px-8 md:px-20 bg-[#0A0D14] relative">
+    <section id="confidential-how-it-works" className="py-20 px-8 md:px-20 bg-[#000000] relative">
       <div className="max-w-7xl mx-auto">
         <RevealOnScroll>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">How it works</h2>
@@ -18,7 +18,7 @@ export function ConfidentialHowItWorksV2() {
             </p>
           </div>
 
-          <div className="bg-[#111317] border border-white/10 rounded-[16px] p-8 overflow-hidden hover:border-white/20 transition-colors duration-300">
+          <div className="bg-[#242424] border border-white/10 rounded-[16px] p-8 overflow-hidden hover:border-white/20 transition-colors duration-300">
             <Image
               src="/images/near-intents-confidential-img1.png"
               alt="Confidential Intents architecture diagram"

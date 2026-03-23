@@ -53,7 +53,7 @@ export function ConfidentialHeroV2() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden min-h-screen flex flex-col bg-[#0A0D14]">
+    <section ref={sectionRef} className="relative overflow-hidden min-h-screen flex flex-col bg-[#000000]">
       {/* Background image */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div

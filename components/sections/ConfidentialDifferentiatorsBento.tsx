@@ -31,13 +31,13 @@ export function ConfidentialDifferentiatorsBento() {
   const ref = useAnimationVisibility({ threshold: 0.1 });
 
   return (
-    <section ref={ref} className="py-20 px-8 md:px-20 bg-[#0A0D14] relative" style={{ contain: 'layout style paint' }}>
+    <section ref={ref} className="py-20 px-8 md:px-20 bg-[#000000] relative" style={{ contain: 'layout style paint' }}>
       <div className="max-w-7xl mx-auto">
         <div className="bento-grid">
           {differentiators.map((item, idx) => (
             <RevealOnScroll key={idx} delay={idx * 0.15}>
               <div
-                className="bg-[#111317] border border-white/10 p-5 md:p-8 rounded-[16px] h-full relative group hover:border-brand-orange-500/40 hover:shadow-lg hover:shadow-brand-orange-500/10 shadow-lg flex flex-col transition-all duration-300 overflow-hidden bento-item"
+                className="bg-[#242424] border border-white/10 p-5 md:p-8 rounded-[16px] h-full relative group hover:border-brand-orange-500/40 hover:shadow-lg hover:shadow-brand-orange-500/10 shadow-lg flex flex-col transition-all duration-300 overflow-hidden bento-item"
                 style={{ contain: 'layout style' }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-orange-500/0 to-brand-orange-500/0 group-hover:from-brand-orange-500/5 group-hover:to-brand-orange-500/0 pointer-events-none transition-all duration-300" />

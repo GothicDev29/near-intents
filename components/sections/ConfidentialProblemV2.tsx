@@ -5,7 +5,7 @@ import { RevealOnScroll } from '@/components/shared/RevealOnScroll';
 
 export function ConfidentialProblemV2() {
   return (
-    <section className="py-20 px-8 md:px-20 bg-[#0A0D14] relative">
+    <section className="py-20 px-8 md:px-20 bg-[#000000] relative">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">Confidentiality built into execution</h2>
 
@@ -23,7 +23,7 @@ export function ConfidentialProblemV2() {
                 Confidential Intents provides restricted visibility for anyone managing cross-chain positions with real capital at stake. Powered by a NEAR private shard and connected to NEAR mainnet via a TEE-based bridge, it delivers cryptographically-secured execution without the complexity of ZK-only systems—no client-side proof generation, no state sync, no bespoke wallet setup.
               </p>
 
-              <div className="bg-[#111317] border border-white/10 p-5 rounded-[16px] flex gap-3 items-start hover:border-white/20 transition-colors duration-300">
+              <div className="bg-[#242424] border border-white/10 p-5 rounded-[16px] flex gap-3 items-start hover:border-white/20 transition-colors duration-300">
                 <span className="text-brand-orange font-mono font-bold shrink-0 mt-1">+</span>
                 <p className="text-zinc-400 leading-relaxed">
                   Opt into confidentiality when you need it by toggling between your Main Account and Confidential Account directly on near.com.

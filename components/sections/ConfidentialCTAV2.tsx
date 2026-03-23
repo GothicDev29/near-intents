@@ -63,7 +63,7 @@ export function ConfidentialCTAV2() {
   }, []);
 
   return (
-    <footer ref={sectionRef} className="py-8 md:py-12 px-8 md:px-20 pb-32 bg-[#0A0D14] relative">
+    <footer ref={sectionRef} className="py-8 md:py-12 px-8 md:px-20 pb-32 bg-[#000000] relative">
 
       {/* Background image */}
       <div className="absolute inset-0 pointer-events-none z-0">

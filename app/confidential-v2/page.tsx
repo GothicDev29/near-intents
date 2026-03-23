@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export default function ConfidentialPage() {
   return (
-    <div className="min-h-screen bg-[#0A0D14] text-white font-sans selection:bg-brand-orange-500 selection:text-black mesh-gradient-v2">
+    <div className="min-h-screen bg-[#000000] text-white font-sans selection:bg-brand-orange-500 selection:text-black mesh-gradient-v2">
       <Navigation />
       <ConfidentialHeroV2 />
       <ConfidentialProblemV2 />

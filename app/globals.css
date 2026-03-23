@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #0A0D14;
+  --background: #000000;
   --foreground: #ffffff;
   --brand-orange: #FB4D01;
 }
